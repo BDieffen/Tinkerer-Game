@@ -4,12 +4,12 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour {
+public class PauseManagerScript : MonoBehaviour {
 
     public TextMeshPro loadGame;
-    public TextMeshPro newGame;
+    //public TextMeshPro newGame;
     public TextMeshPro options;
-    public TextMeshPro credits;
+    //public TextMeshPro credits;
     public TextMeshPro quitGame;
 
     TextMeshPro[] selections;
@@ -27,46 +27,51 @@ public class MainMenu : MonoBehaviour {
     float upDown;
     bool changing;
 
-    void Start()
-    {
-        /*theAudio = GameObject.Find("SelectionSound").GetComponent<AudioSource>();
-        theAudio.clip = selectSound;*/
+    //^^^^^^ Cut from Main Menu Script^^^^^^
+
+    PauseScreenScript pauseScreenInitialScript;
+
+    int[] subMenu;
+    int selectedSubMenu = 0;
+
+    // Use this for initialization
+    void Start () {
 
         loadGame = GameObject.Find("LoadGame").GetComponent<TextMeshPro>();
-        newGame = GameObject.Find("NewGame").GetComponent<TextMeshPro>();
+        //newGame = GameObject.Find("NewGame").GetComponent<TextMeshPro>();
         options = GameObject.Find("Options").GetComponent<TextMeshPro>();
-        credits = GameObject.Find("Credits").GetComponent<TextMeshPro>();
+        //credits = GameObject.Find("Credits").GetComponent<TextMeshPro>();
         quitGame = GameObject.Find("Quit").GetComponent<TextMeshPro>();
 
-        selections = new TextMeshPro[5];
+        selections = new TextMeshPro[3];
         selections[0] = loadGame;
-        selections[1] = newGame;
-        selections[2] = options;
-        selections[3] = credits;
-        selections[4] = quitGame;
+        selections[1] = options;
+        selections[2] = quitGame;
+        //selections[3] = credits;
+        //selections[4] = quitGame;
 
-        lines = new GameObject[5];
+        lines = new GameObject[3];
         lines[0] = GameObject.Find("Line1");
-        lines[1] = GameObject.Find("Line2");
-        lines[2] = GameObject.Find("Line3");
-        lines[3] = GameObject.Find("Line4");
-        lines[4] = GameObject.Find("Line5");
+        lines[1] = GameObject.Find("Line3");
+        lines[2] = GameObject.Find("Line5");
+        //lines[3] = GameObject.Find("Line4");
+        //lines[4] = GameObject.Find("Line5");
 
-        originLineSize = new Vector3[5];
+        originLineSize = new Vector3[3];
         originLineSize[0] = lines[0].transform.localScale;
         originLineSize[1] = lines[1].transform.localScale;
         originLineSize[2] = lines[2].transform.localScale;
-        originLineSize[3] = lines[3].transform.localScale;
-        originLineSize[4] = lines[4].transform.localScale;
+        //originLineSize[3] = lines[3].transform.localScale;
+        //originLineSize[4] = lines[4].transform.localScale;
 
-        lightPositions = new float[5];
-        lightPositions[0] = .96f;
-        lightPositions[1] = .25f;
-        lightPositions[2] = -.49f;
-        lightPositions[3] = -1.15f;
-        lightPositions[4] = -1.96f;
+        lightPositions = new float[3];
+        lightPositions[0] = 1.42f;
+        lightPositions[1] = -.44f;
+        lightPositions[2] = -3f;
+        //lightPositions[3] = -1.15f;
+        //lightPositions[4] = -1.96f;
 
-        for (int i = 1; i<lines.Length; i++)
+        for (int i = 1; i < lines.Length; i++)
         {
             lines[i].transform.localScale = new Vector3(0, 1, originLineSize[i].z);
         }
@@ -75,16 +80,35 @@ public class MainMenu : MonoBehaviour {
         selectionLights.transform.position = new Vector3(selectionLights.transform.position.x, lightPositions[selectionSpot], selectionLights.transform.position.z);
 
         previousSelection = selections.Length + 1;
+
+        //^^^^^^ Cut from Main Menu Script^^^^^^
+
+        pauseScreenInitialScript = GameObject.Find("GameManager").GetComponent<PauseScreenScript>();
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+        if (pauseScreenInitialScript.isPaused && pauseScreenInitialScript.canBePaused)
+        {
+            if (Input.GetKeyDown(KeyCode.Joystick1Button7))
+            {
+                pauseScreenInitialScript.UnPause();
+            }
+        }
+
+        MenuUpdate();
     }
 
-    void Update()
+    void MenuUpdate()
     {
         upDown = Input.GetAxisRaw("Vertical");
         SelectionChange();
 
         if (selectionLights.transform.position.y != lightPositions[selectionSpot])
         {
-            selectionLights.transform.position = Vector3.Lerp(selectionLights.transform.position, new Vector3(selectionLights.transform.position.x, lightPositions[selectionSpot], selectionLights.transform.position.z), 3 * Time.deltaTime);
+            selectionLights.transform.position = Vector3.Lerp(selectionLights.transform.position, new Vector3(selectionLights.transform.position.x, lightPositions[selectionSpot], selectionLights.transform.position.z), 3 * Time.unscaledDeltaTime);
         }
 
         for (int i = 0; i < lines.Length; i++)
@@ -93,14 +117,14 @@ public class MainMenu : MonoBehaviour {
             {
                 if (lines[selectionSpot].transform.localScale != originLineSize[selectionSpot])
                 {
-                    lines[selectionSpot].transform.localScale = Vector3.Lerp(lines[selectionSpot].transform.localScale, originLineSize[selectionSpot], 3 * Time.deltaTime);
+                    lines[selectionSpot].transform.localScale = Vector3.Lerp(lines[selectionSpot].transform.localScale, originLineSize[selectionSpot], 3 * Time.unscaledDeltaTime);
                 }
             }
             else
             {
                 if (lines[i].transform.localScale != new Vector3(0, 1, originLineSize[i].z))
                 {
-                    lines[i].transform.localScale = Vector3.Lerp(lines[i].transform.localScale, new Vector3(0, 1, originLineSize[i].z), 3 * Time.deltaTime);
+                    lines[i].transform.localScale = Vector3.Lerp(lines[i].transform.localScale, new Vector3(0, 1, originLineSize[i].z), 3 * Time.unscaledDeltaTime);
                 }
             }
         }
@@ -129,7 +153,7 @@ public class MainMenu : MonoBehaviour {
 
         if (-upDown > 0)
         {
-            if (selectionSpot >= 4)
+            if (selectionSpot >= 2)
             {
                 selectionSpot = 0;
             }
@@ -139,7 +163,7 @@ public class MainMenu : MonoBehaviour {
         {
             if (selectionSpot <= 0)
             {
-                selectionSpot = 4;
+                selectionSpot = 2;
             }
             else selectionSpot--;
         }
@@ -169,7 +193,6 @@ public class MainMenu : MonoBehaviour {
             SceneManager.LoadScene("Credits");
         }*/
         else
-            Application.Quit();
+            SceneManager.LoadScene("MainMenu");
     }
-
 }
