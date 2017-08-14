@@ -1,0 +1,2 @@
+Have rust appear on the character when in rain or water
+

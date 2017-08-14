@@ -1,0 +1,852 @@
+fileFormatVersion: 2
+guid: f53a842bdaff8d2449d1f38408391c5b
+timeCreated: 1499201635
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Body
+    100004: Bone
+    100006: Bone_001
+    100008: Bone_002
+    100010: Bone_003
+    100012: Bone_004
+    100014: Bone_005
+    100016: Bone_006
+    100018: Bone_007
+    100020: Bone_008
+    100022: Bone_011
+    100024: Circle
+    100026: Circle_001
+    100028: Circle_002
+    100030: Circle_003
+    100032: Circle_004
+    100034: Circle_005
+    100036: Circle_006
+    100038: Circle_007
+    100040: Circle_008
+    100042: Circle_009
+    100044: Circle_010
+    100046: Circle_012
+    100048: Circle_013
+    100050: Cube
+    100052: Cube_001
+    100054: Cube_002
+    100056: Cube_003
+    100058: Cube_004
+    100060: Cylinder
+    100062: Cylinder_001
+    100064: Cylinder_002
+    100066: Cylinder_003
+    100068: Cylinder_004
+    100070: Cylinder_005
+    100072: Cylinder_006
+    100074: Cylinder_007
+    100076: Cylinder_008
+    100078: Cylinder_009
+    100080: Cylinder_010
+    100082: Cylinder_011
+    100084: Foot
+    100086: Foot_001
+    100088: leftHand
+    100090: Neck
+    100092: //RootNode
+    100094: Root
+    100096: Shoulder
+    100098: Shoulder_001
+    100100: Sphere_000
+    100102: Sphere_001
+    100104: Sphere_002
+    100106: Sphere_003
+    100108: Sphere_004
+    100110: Sphere_005
+    100112: Sphere_006
+    100114: Sphere_007
+    400000: Armature
+    400002: Body
+    400004: Bone
+    400006: Bone_001
+    400008: Bone_002
+    400010: Bone_003
+    400012: Bone_004
+    400014: Bone_005
+    400016: Bone_006
+    400018: Bone_007
+    400020: Bone_008
+    400022: Bone_011
+    400024: Circle
+    400026: Circle_001
+    400028: Circle_002
+    400030: Circle_003
+    400032: Circle_004
+    400034: Circle_005
+    400036: Circle_006
+    400038: Circle_007
+    400040: Circle_008
+    400042: Circle_009
+    400044: Circle_010
+    400046: Circle_012
+    400048: Circle_013
+    400050: Cube
+    400052: Cube_001
+    400054: Cube_002
+    400056: Cube_003
+    400058: Cube_004
+    400060: Cylinder
+    400062: Cylinder_001
+    400064: Cylinder_002
+    400066: Cylinder_003
+    400068: Cylinder_004
+    400070: Cylinder_005
+    400072: Cylinder_006
+    400074: Cylinder_007
+    400076: Cylinder_008
+    400078: Cylinder_009
+    400080: Cylinder_010
+    400082: Cylinder_011
+    400084: Foot
+    400086: Foot_001
+    400088: leftHand
+    400090: Neck
+    400092: //RootNode
+    400094: Root
+    400096: Shoulder
+    400098: Shoulder_001
+    400100: Sphere_000
+    400102: Sphere_001
+    400104: Sphere_002
+    400106: Sphere_003
+    400108: Sphere_004
+    400110: Sphere_005
+    400112: Sphere_006
+    400114: Sphere_007
+    2300000: Circle
+    3300000: Circle
+    4300000: Cube_002
+    4300002: Cube_001
+    4300004: Circle_010
+    4300006: Cylinder_007
+    4300008: Cylinder_008
+    4300010: Circle_012
+    4300012: Cylinder_009
+    4300014: Circle_008
+    4300016: Circle_013
+    4300018: Cylinder_006
+    4300020: Cylinder_003
+    4300022: Circle_007
+    4300024: Circle_006
+    4300026: Cylinder_002
+    4300028: Cylinder_004
+    4300030: Circle_004
+    4300032: Circle_009
+    4300034: Cylinder_001
+    4300036: Cylinder_010
+    4300038: Circle_001
+    4300040: Cylinder_005
+    4300042: Circle_003
+    4300044: Cube
+    4300046: Cylinder
+    4300048: Sphere_004
+    4300050: Sphere_007
+    4300052: Sphere_000
+    4300054: Sphere_005
+    4300056: Sphere_002
+    4300058: Sphere_006
+    4300060: Sphere_001
+    4300062: Sphere_003
+    4300064: Circle_002
+    4300066: Circle_005
+    4300068: Cylinder_011
+    4300070: Cube_004
+    4300072: Cube_003
+    4300074: Circle
+    7400000: Default Take
+    7400002: Idle
+    7400004: Walking
+    7400006: WalkingAnim
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Circle_001
+    13700002: Circle_002
+    13700004: Circle_003
+    13700006: Circle_004
+    13700008: Circle_005
+    13700010: Circle_006
+    13700012: Circle_007
+    13700014: Circle_008
+    13700016: Circle_009
+    13700018: Circle_010
+    13700020: Circle_012
+    13700022: Circle_013
+    13700024: Cube
+    13700026: Cube_001
+    13700028: Cube_002
+    13700030: Cube_003
+    13700032: Cube_004
+    13700034: Cylinder
+    13700036: Cylinder_001
+    13700038: Cylinder_002
+    13700040: Cylinder_003
+    13700042: Cylinder_004
+    13700044: Cylinder_005
+    13700046: Cylinder_006
+    13700048: Cylinder_007
+    13700050: Cylinder_008
+    13700052: Cylinder_009
+    13700054: Cylinder_010
+    13700056: Cylinder_011
+    13700058: Sphere_000
+    13700060: Sphere_001
+    13700062: Sphere_002
+    13700064: Sphere_003
+    13700066: Sphere_004
+    13700068: Sphere_005
+    13700070: Sphere_006
+    13700072: Sphere_007
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 223
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Body
+        weight: 1
+      - path: Armature/Root/Body/Bone
+        weight: 1
+      - path: Armature/Root/Body/Bone/Bone_001
+        weight: 1
+      - path: Armature/Root/Body/Bone_002
+        weight: 1
+      - path: Armature/Root/Body/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/Root/Body/Bone_004
+        weight: 1
+      - path: Armature/Root/Body/Bone_004/Neck
+        weight: 1
+      - path: Armature/Root/Body/Shoulder
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005/Bone_006
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005/Bone_006/Bone_011
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007/Bone_008
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007/Bone_008/leftHand
+        weight: 1
+      - path: Armature/Root/Foot
+        weight: 1
+      - path: Armature/Root/Foot_001
+        weight: 1
+      - path: Circle
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      - path: Circle_010
+        weight: 1
+      - path: Circle_012
+        weight: 1
+      - path: Circle_013
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube_001
+        weight: 1
+      - path: Cube_002
+        weight: 1
+      - path: Cube_003
+        weight: 1
+      - path: Cube_004
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      - path: Cylinder_002
+        weight: 1
+      - path: Cylinder_003
+        weight: 1
+      - path: Cylinder_004
+        weight: 1
+      - path: Cylinder_005
+        weight: 1
+      - path: Cylinder_006
+        weight: 1
+      - path: Cylinder_007
+        weight: 1
+      - path: Cylinder_008
+        weight: 1
+      - path: Cylinder_009
+        weight: 1
+      - path: Cylinder_010
+        weight: 1
+      - path: Cylinder_011
+        weight: 1
+      - path: Sphere_000
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Sphere_003
+        weight: 1
+      - path: Sphere_004
+        weight: 1
+      - path: Sphere_005
+        weight: 1
+      - path: Sphere_006
+        weight: 1
+      - path: Sphere_007
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 224
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Body
+        weight: 1
+      - path: Armature/Root/Body/Bone
+        weight: 1
+      - path: Armature/Root/Body/Bone/Bone_001
+        weight: 1
+      - path: Armature/Root/Body/Bone_002
+        weight: 1
+      - path: Armature/Root/Body/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/Root/Body/Bone_004
+        weight: 1
+      - path: Armature/Root/Body/Bone_004/Neck
+        weight: 1
+      - path: Armature/Root/Body/Shoulder
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005/Bone_006
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005/Bone_006/Bone_011
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007/Bone_008
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007/Bone_008/leftHand
+        weight: 1
+      - path: Armature/Root/Foot
+        weight: 1
+      - path: Armature/Root/Foot_001
+        weight: 1
+      - path: Circle
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      - path: Circle_010
+        weight: 1
+      - path: Circle_012
+        weight: 1
+      - path: Circle_013
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube_001
+        weight: 1
+      - path: Cube_002
+        weight: 1
+      - path: Cube_003
+        weight: 1
+      - path: Cube_004
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      - path: Cylinder_002
+        weight: 1
+      - path: Cylinder_003
+        weight: 1
+      - path: Cylinder_004
+        weight: 1
+      - path: Cylinder_005
+        weight: 1
+      - path: Cylinder_006
+        weight: 1
+      - path: Cylinder_007
+        weight: 1
+      - path: Cylinder_008
+        weight: 1
+      - path: Cylinder_009
+        weight: 1
+      - path: Cylinder_010
+        weight: 1
+      - path: Cylinder_011
+        weight: 1
+      - path: Sphere_000
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Sphere_003
+        weight: 1
+      - path: Sphere_004
+        weight: 1
+      - path: Sphere_005
+        weight: 1
+      - path: Sphere_006
+        weight: 1
+      - path: Sphere_007
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walking
+      takeName: Walking
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Body
+        weight: 1
+      - path: Armature/Root/Body/Bone
+        weight: 1
+      - path: Armature/Root/Body/Bone/Bone_001
+        weight: 1
+      - path: Armature/Root/Body/Bone_002
+        weight: 1
+      - path: Armature/Root/Body/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/Root/Body/Bone_004
+        weight: 1
+      - path: Armature/Root/Body/Bone_004/Neck
+        weight: 1
+      - path: Armature/Root/Body/Shoulder
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005/Bone_006
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005/Bone_006/Bone_011
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007/Bone_008
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007/Bone_008/leftHand
+        weight: 1
+      - path: Armature/Root/Foot
+        weight: 1
+      - path: Armature/Root/Foot_001
+        weight: 1
+      - path: Circle
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      - path: Circle_010
+        weight: 1
+      - path: Circle_012
+        weight: 1
+      - path: Circle_013
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube_001
+        weight: 1
+      - path: Cube_002
+        weight: 1
+      - path: Cube_003
+        weight: 1
+      - path: Cube_004
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      - path: Cylinder_002
+        weight: 1
+      - path: Cylinder_003
+        weight: 1
+      - path: Cylinder_004
+        weight: 1
+      - path: Cylinder_005
+        weight: 1
+      - path: Cylinder_006
+        weight: 1
+      - path: Cylinder_007
+        weight: 1
+      - path: Cylinder_008
+        weight: 1
+      - path: Cylinder_009
+        weight: 1
+      - path: Cylinder_010
+        weight: 1
+      - path: Cylinder_011
+        weight: 1
+      - path: Sphere_000
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Sphere_003
+        weight: 1
+      - path: Sphere_004
+        weight: 1
+      - path: Sphere_005
+        weight: 1
+      - path: Sphere_006
+        weight: 1
+      - path: Sphere_007
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: WalkingAnim
+      takeName: WalkingAnim
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Body
+        weight: 1
+      - path: Armature/Root/Body/Bone
+        weight: 1
+      - path: Armature/Root/Body/Bone/Bone_001
+        weight: 1
+      - path: Armature/Root/Body/Bone_002
+        weight: 1
+      - path: Armature/Root/Body/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/Root/Body/Bone_004
+        weight: 1
+      - path: Armature/Root/Body/Bone_004/Neck
+        weight: 1
+      - path: Armature/Root/Body/Shoulder
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005/Bone_006
+        weight: 1
+      - path: Armature/Root/Body/Shoulder/Bone_005/Bone_006/Bone_011
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007/Bone_008
+        weight: 1
+      - path: Armature/Root/Body/Shoulder_001/Bone_007/Bone_008/leftHand
+        weight: 1
+      - path: Armature/Root/Foot
+        weight: 1
+      - path: Armature/Root/Foot_001
+        weight: 1
+      - path: Circle
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      - path: Circle_010
+        weight: 1
+      - path: Circle_012
+        weight: 1
+      - path: Circle_013
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube_001
+        weight: 1
+      - path: Cube_002
+        weight: 1
+      - path: Cube_003
+        weight: 1
+      - path: Cube_004
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      - path: Cylinder_002
+        weight: 1
+      - path: Cylinder_003
+        weight: 1
+      - path: Cylinder_004
+        weight: 1
+      - path: Cylinder_005
+        weight: 1
+      - path: Cylinder_006
+        weight: 1
+      - path: Cylinder_007
+        weight: 1
+      - path: Cylinder_008
+        weight: 1
+      - path: Cylinder_009
+        weight: 1
+      - path: Cylinder_010
+        weight: 1
+      - path: Cylinder_011
+        weight: 1
+      - path: Sphere_000
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Sphere_003
+        weight: 1
+      - path: Sphere_004
+        weight: 1
+      - path: Sphere_005
+        weight: 1
+      - path: Sphere_006
+        weight: 1
+      - path: Sphere_007
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
