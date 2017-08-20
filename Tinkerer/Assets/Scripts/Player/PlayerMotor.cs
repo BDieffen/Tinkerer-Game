@@ -75,7 +75,7 @@ public class PlayerMotor : MonoBehaviour {
             }
 
             isStationary = false;
-            if (!playerAnim.IsPlaying("WalkingAnim") && playerController.canJump && !playerController.isRunning)
+            if (!playerAnim.IsPlaying("WalkingAnimwithfootstep") && playerController.canJump && !playerController.isRunning)
             {
                 playerAnim.Play("WalkingAnimwithfootstep");
                 //footStepSounds.Play();
@@ -117,6 +117,10 @@ public class PlayerMotor : MonoBehaviour {
 
     public void Jump()
     {
+        if (playerAnim.IsPlaying("WalkingAnimwithfootstep"))
+        {
+            playerAnim.Stop("WalkingAnimwithfootstep");
+        }
         rb.velocity += Vector3.up * jumpHeight;
     }
 }
