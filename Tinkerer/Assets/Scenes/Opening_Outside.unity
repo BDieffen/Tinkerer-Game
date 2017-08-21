@@ -625,6 +625,30 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1287211250}
+    - target: {fileID: 23917671396395992, guid: c866f36540256ea448342e23cae107ee,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23917671396395992, guid: c866f36540256ea448342e23cae107ee,
+        type: 2}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23917671396395992, guid: c866f36540256ea448342e23cae107ee,
+        type: 2}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23917671396395992, guid: c866f36540256ea448342e23cae107ee,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472715910355968, guid: c866f36540256ea448342e23cae107ee, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c866f36540256ea448342e23cae107ee, type: 2}
   m_IsPrefabParent: 0
