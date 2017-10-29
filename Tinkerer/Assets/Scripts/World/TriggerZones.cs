@@ -97,9 +97,12 @@ public class TriggerZones : MonoBehaviour {
 
     private void OnDestroy()
     {
-        buttonPrompts.HidePrompt(1);
-        buttonPrompts.HidePrompt(2);
-        buttonPrompts.HidePrompt(3);
-        buttonPrompts.HidePrompt(4);
+        if (buttonPrompts != null)
+        {
+            buttonPrompts.HidePrompt(1);
+            buttonPrompts.HidePrompt(2);
+            buttonPrompts.HidePrompt(3);
+            buttonPrompts.HidePrompt(4);
+        }
     }
 }

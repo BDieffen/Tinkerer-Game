@@ -143,6 +143,7 @@ public class PauseManagerScript : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Return))
         {
             StartCoroutine(SceneChange());
+            //ChangeScene()
         }
     }
 
@@ -174,15 +175,17 @@ public class PauseManagerScript : MonoBehaviour {
     {
         if (selectionSpot == 0)
         {
-            float fadeTime = GetComponent<Fading>().BeginFade(1);
-            yield return new WaitForSeconds(fadeTime);
+            float fadeTime = GameObject.Find("GameManager").GetComponent<Fading>().BeginFade(1);
+            yield return StartCoroutine(NoTimeScaleWaitForSeconds.WaitForRealSeconds(fadeTime));
             SceneManager.LoadScene("Test");
+            Time.timeScale = 1f;
         }
         else if (selectionSpot == 1)
         {
-            float fadeTime = GetComponent<Fading>().BeginFade(1);
-            yield return new WaitForSeconds(fadeTime);
+            float fadeTime = GameObject.Find("GameManager").GetComponent<Fading>().BeginFade(1);
+            yield return StartCoroutine(NoTimeScaleWaitForSeconds.WaitForRealSeconds(fadeTime));
             SceneManager.LoadScene("Test");
+            Time.timeScale = 1f;
         }
         /*else if (selectionSpot == 2)
         {
@@ -193,6 +196,23 @@ public class PauseManagerScript : MonoBehaviour {
             SceneManager.LoadScene("Credits");
         }*/
         else
+        {
+            float fadeTime = GameObject.Find("GameManager").GetComponent<Fading>().BeginFade(1);
+            yield return StartCoroutine(NoTimeScaleWaitForSeconds.WaitForRealSeconds(fadeTime));
             SceneManager.LoadScene("MainMenu");
+            Time.timeScale = 1f;
+        }
+    }
+}
+
+public static class NoTimeScaleWaitForSeconds
+{
+    public static IEnumerator WaitForRealSeconds(float time)
+    {
+        float start = Time.realtimeSinceStartup;
+        while (Time.realtimeSinceStartup < start + time)
+        {
+            yield return null;
+        }
     }
 }
