@@ -17,6 +17,8 @@ public class PlayerMotor : MonoBehaviour {
     Vector3 moveThisWay;
     Rigidbody rb;
     PlayerController playerController;
+    public Vector3 analogDirection;
+    float angle;
     //Animation footStepSounds;
 
     // Use this for initialization
@@ -29,6 +31,8 @@ public class PlayerMotor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        analogDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
         if (isStationary && !isMoving && !playerAnim.IsPlaying("Idle"))
         {
@@ -53,17 +57,18 @@ public class PlayerMotor : MonoBehaviour {
 
             if (playerController.isRunning)
             {
-                moveThisWay = new Vector3(Input.GetAxisRaw("Horizontal") * runSpeed, rb.velocity.y, 0);
+                moveThisWay = new Vector3(Input.GetAxisRaw("Horizontal") * runSpeed, rb.velocity.y, (Input.GetAxisRaw("Vertical") * runSpeed));
             }
             else
             {
-                moveThisWay = new Vector3(Input.GetAxisRaw("Horizontal") * walkSpeed, rb.velocity.y, 0);
+                moveThisWay = new Vector3(Input.GetAxisRaw("Horizontal") * walkSpeed, rb.velocity.y, Input.GetAxisRaw("Vertical") * walkSpeed);
             }
 
             rb.velocity = moveThisWay;
 
-            //DECAYS MOVEMENT
-            if (rb.velocity.x < 0 && transform.rotation.y != -90)
+            //ORIGINAL CODE!!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            //Rotates character and DECAYS MOVEMENT
+            /*if (rb.velocity.x < 0 && transform.rotation.y != -90)
             {
                 targetRot = Quaternion.Euler(0, -90, 0);
                 transform.rotation = targetRot;
@@ -72,15 +77,26 @@ public class PlayerMotor : MonoBehaviour {
             {
                 targetRot = Quaternion.Euler(0, 90, 0);
                 transform.rotation = targetRot;
+            }*/
+            //END OF ORIGINAL CODE!!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+            
+            //Rotates character and DECAYS MOVEMENT
+            if (analogDirection.x != 0 || analogDirection.z != 0)
+            {
+                angle = Mathf.Atan2(analogDirection.x, analogDirection.z) * Mathf.Rad2Deg;
+                targetRot = Quaternion.Euler(new Vector3(0, angle, 0));
+                transform.rotation = targetRot;
+                //transform.rotation = new Vector3(0, transform.rotation.y + angle, 0);
             }
+
 
             isStationary = false;
             if (!playerAnim.IsPlaying("WalkingAnimwithfootstep") && playerController.canJump && !playerController.isRunning)
             {
                 playerAnim.Play("WalkingAnimwithfootstep");
-                //footStepSounds.Play();
             }
-            //else footStepSounds.Stop();
+
             //INSERT RUNNING ANIMATION HERE
             /*else if (!playerAnim.IsPlaying("WalkingAnim") && playerController.canJump && playerController.isRunning)
             {

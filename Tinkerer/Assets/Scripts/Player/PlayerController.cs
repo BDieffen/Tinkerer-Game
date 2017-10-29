@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if (Input.GetAxisRaw("Horizontal") != 0)
+        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
             playerMotor.isMoving = true;
         }
@@ -131,21 +131,21 @@ public class PlayerController : MonoBehaviour {
             {
                 if (playerInventory.currentCurrency < playerInventory.maxCurrency)
                 {
-                    playerInventory.CurrencyPickup(10);
+                    playerInventory.CurrencyPickup(3);
                     Destroy(triggerObj.gameObject);
                 }
             } else if (triggerObj.name == "SilverGear")
             {
                 if (playerInventory.currentCurrency < playerInventory.maxCurrency)
                 {
-                    playerInventory.CurrencyPickup(5);
+                    playerInventory.CurrencyPickup(2);
                     Destroy(triggerObj.gameObject);
                 }
             } else if (triggerObj.name == "CopperGear")
             {
                 if (playerInventory.currentCurrency < playerInventory.maxCurrency)
                 {
-                    playerInventory.CurrencyPickup(2);
+                    playerInventory.CurrencyPickup(1);
                     Destroy(triggerObj.gameObject);
                 }
             }

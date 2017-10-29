@@ -21,7 +21,7 @@ public class ButtonPromptFollow : MonoBehaviour {
 	void Update () {
 
         targetPos = target.transform.position;
-        transform.position = new Vector3(targetPos.x - 2.2f, targetPos.y + 1.5f, transform.position.z);
+        transform.position = new Vector3(targetPos.x - 2.2f, targetPos.y + 1.5f, targetPos.z);
 		
 	}
 
