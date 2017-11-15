@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
     PlayerInventory playerInventory;
     //TheLightScript lightScript;
 
+    public bool delayedMovement;
+    DelayedMovementScript delayMovementScript;
     PlayerMotor playerMotor;
     public bool canJump = false;
     public bool isRunning = false;
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour {
         gameManager = GameObject.Find("GameManager");
         playerInventory = gameManager.GetComponent<PlayerInventory>();
         playerMotor = GetComponent<PlayerMotor>();
+        delayMovementScript = GetComponent<DelayedMovementScript>();
         theFlashlight = GameObject.Find("Flashlight");
         flashlightDefaultRot = theFlashlight.transform.rotation;
         //lightScript = GameObject.Find("TheLight").GetComponent<TheLightScript>();
@@ -106,7 +109,15 @@ public class PlayerController : MonoBehaviour {
         }
         else playerMotor.isMoving = false;
 
-        playerMotor.ApplyMovement();
+        //Delayed movement
+        if (delayedMovement)
+        {
+            delayMovementScript.MoveBuddy();
+        }
+        //Non delayed movement
+        else
+            playerMotor.ApplyMovement();
+
 
         /*if(rightStickRotX != 0)
         {

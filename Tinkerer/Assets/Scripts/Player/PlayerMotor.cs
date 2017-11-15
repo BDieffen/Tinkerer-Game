@@ -31,17 +31,15 @@ public class PlayerMotor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
         analogDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
-        if (isStationary && !isMoving && !playerAnim.IsPlaying("Idle"))
+        if (playerController.delayedMovement || (isStationary && !isMoving && !playerAnim.IsPlaying("Idle")))
         {
             playerAnim.Play("Idle");
         }
         else if(isMoving) {
             playerAnim.Stop("Idle");
         }
-
     }
 
     private void FixedUpdate()
@@ -86,8 +84,7 @@ public class PlayerMotor : MonoBehaviour {
             {
                 angle = Mathf.Atan2(analogDirection.x, analogDirection.z) * Mathf.Rad2Deg;
                 targetRot = Quaternion.Euler(new Vector3(0, angle, 0));
-                transform.rotation = targetRot;
-                //transform.rotation = new Vector3(0, transform.rotation.y + angle, 0);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, .15f);
             }
 
 
