@@ -13,7 +13,7 @@ public class PlayerMotor : MonoBehaviour {
     float jumpHeight = 12;
     public bool isMoving = false;
     [SerializeField]
-    bool isStationary = true;
+    public bool isStationary = true;
     Vector3 moveThisWay;
     Rigidbody rb;
     PlayerController playerController;

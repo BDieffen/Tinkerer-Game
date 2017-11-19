@@ -11,6 +11,8 @@ public class DelayedMovementScript : MonoBehaviour {
     Rigidbody buddyRB;
     Vector3[] loggedPositions = new Vector3[4];
     int currentlyLoggedPos = 0;
+    [SerializeField]
+    List<Vector3> positionsToMoveTo = new List<Vector3>();
 
     Animation playerAnim;
     [SerializeField]
@@ -20,7 +22,6 @@ public class DelayedMovementScript : MonoBehaviour {
     private float moveDecayRate = 15;
     float jumpHeight = 12;
     public bool isMoving = false;
-    [SerializeField]
     bool isStationary = true;
     Vector3 moveThisWay;
     Rigidbody rb;
@@ -34,7 +35,7 @@ public class DelayedMovementScript : MonoBehaviour {
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        buddyRB = delayedBuddy.GetComponent<Rigidbody>();
+        //buddyRB = delayedBuddy.GetComponent<Rigidbody>();
         playerController = GetComponent<PlayerController>();
         playerMotor = GetComponent<PlayerMotor>();
         playerAnim = GetComponent<Animation>();
@@ -44,12 +45,12 @@ public class DelayedMovementScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        analogDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        //analogDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
     }
 
     private void FixedUpdate()
     {
-        currentSpeed = buddyRB.velocity.x;
+        /*currentSpeed = buddyRB.velocity.x;
         if (playerCanMove)
         {
             MovePlayer();
@@ -59,23 +60,20 @@ public class DelayedMovementScript : MonoBehaviour {
         if (transform.position != delayedBuddy.transform.position && !playerCanMove)
         {
             DelayCountdown();
-        }
+        }*/
     }
 
     //THIS SHOULD START THE COUNTDOWN TIL THE PLAYER STARTS MOVING TOWARDS THE delayBuddy OBJECT. DOES NOT WORK RIGHT NOW. MUST FIX
-    public void DelayCountdown()
+    /*public void DelayCountdown()
     {
-        /*for(float i = 0; i < delayLength; i += Time.deltaTime)
+        if(loggedPositions != null)
         {
-
-        }*/
-        StartCoroutine(Timer());
-        playerCanMove = true;
-    }
-
-    public IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(delayLength);
+            playerCanMove = true;
+        }
+        else
+        {
+            playerCanMove = false;
+        }
     }
 
     //MOVES THE delayBuddy OBJECT
@@ -94,15 +92,60 @@ public class DelayedMovementScript : MonoBehaviour {
             //TRYING TO LOG THE delayBuddy POSITION AT CERTAIN INTERVALS OF THE DELAY INTO THE ARRAY TO HANDLE PLAYER MOVEMENT
             timer += Time.deltaTime;
 
-            if(timer )
-
+            LogPositions();
         }
     }
+
+    public void LogPositions()
+    {
+        if (timer >= (delayLength / loggedPositions.Length))
+        {
+            if (currentlyLoggedPos == 0)
+            {
+                loggedPositions[0] = delayedBuddy.transform.position;
+                positionsToMoveTo.Add(loggedPositions[0]);
+                currentlyLoggedPos++;
+            }
+            else if (currentlyLoggedPos == 1)
+            {
+                loggedPositions[1] = delayedBuddy.transform.position;
+                positionsToMoveTo.Add(loggedPositions[1]);
+                currentlyLoggedPos++;
+            }
+            else if (currentlyLoggedPos == 2)
+            {
+                loggedPositions[2] = delayedBuddy.transform.position;
+                positionsToMoveTo.Add(loggedPositions[2]);
+                currentlyLoggedPos++;
+            }
+            else if (currentlyLoggedPos == 3)
+            {
+                loggedPositions[3] = delayedBuddy.transform.position;
+                positionsToMoveTo.Add(loggedPositions[3]);
+                currentlyLoggedPos = 0;
+            }
+            timer = 0;
+        }
+    }*/
 
     public void MovePlayer()
     {
 
-        transform.position = Vector3.MoveTowards(transform.position, delayedBuddy.transform.position, (walkSpeed/1.5f) * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, delayedBuddy.transform.position, (walkSpeed/1.5f) * Time.deltaTime);
+        if (positionsToMoveTo.Count > 0)
+        {
+            isStationary = false;
+            transform.position = Vector3.MoveTowards(transform.position, positionsToMoveTo[0], walkSpeed * Time.deltaTime);
+
+            if (transform.position.x == positionsToMoveTo[0].x && transform.position.z == positionsToMoveTo[0].z)
+            {
+                positionsToMoveTo.RemoveAt(0);
+            }
+        }
+        else
+        {
+            isStationary = true;
+        }
 
         /*if (isMoving)
         {
